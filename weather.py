@@ -26,9 +26,9 @@ st.sidebar.title("Project Team Members:")
 for name in names:
     st.sidebar.write(name)
 
-#st.sidebar.title("Under The Guidance of :")
-#st.sidebar.write("Dr.Bomma.Ramakrishna")
-#st.title("Weather Data Analysis")
+st.sidebar.title("Under The Guidance of :")
+st.sidebar.write("Dr.Bomma.Ramakrishna")
+st.title("Weather Data Analysis")
 
     if st.checkbox("Show raw data"):
         st.write(data)
@@ -106,7 +106,7 @@ for name in names:
     if st.checkbox("Show all instances when 'Weather is Clear' and 'Relative Humidity is greater than 50' or 'Visibility is above 40'"):
         st.write(data[(data['Weather Condition'] == 'Clear') & ((data['Rel Hum_%'] > 50) | (data['Visibility_km'] > 40))])
 
-        # Data visualization question
+        #Data visualization question
 st.write("## Distribution of Temperatures")
 # Create histogram of temperatures
 fig, ax = plt.subplots()
