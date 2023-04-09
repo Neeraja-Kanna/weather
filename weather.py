@@ -1,5 +1,3 @@
-
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -33,6 +31,7 @@ if st.checkbox("Show raw data"):
         st.write(data)
 if st.checkbox("Show first 25 rows"):
         st.write(data.head(25))
+st.write("APPLYING BASIC FUNCTIONS ON DATASET")
 if st.checkbox("Show shape"):
         st.write(data.shape)
 if st.checkbox("Show index"):
