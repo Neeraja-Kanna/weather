@@ -58,6 +58,19 @@ if st.checkbox("Show all Null Values"):
 if st.checkbox("Rename 'Weather' column to 'Weather Condition'"):
         data.rename(columns = {'Weather' : 'Weather Condition'}, inplace=True)
         st.write(data.head())
+# Convert date column to datetime
+data["Date/Time"] = pd.to_datetime(data["Date/Time"])
+# Create new column for month
+data["Month"] = data["Date/Time"].dt.month
+# Calculate mean temperature by month
+mean_temp_by_month = data.groupby("Month")["Temp_C"].mean()
+if st.checkbox("Average temperatures of individual months throughout the year"):
+    if st.checkbox("January"):
+        st.write('the average temperature of january month:',mean_temp_by_month[1])
+        
+        
+        
+        
 if st.checkbox("Show mean 'Visibility'"):
         st.write(data.Visibility_km.mean())
 if st.checkbox("Show Standard Deviation of 'Pressure'"):
@@ -102,14 +115,6 @@ ax.set_ylabel("Visibility (km)")
 if st.checkbox(" Relationship between Temperature and Visibility"):
    st.pyplot(fig)
 #What is the average temperature by month?
-# Data visualization question
-st.write("## Average Temperature by Month")
-# Convert date column to datetime
-data["Date/Time"] = pd.to_datetime(data["Date/Time"])
-# Create new column for month
-data["Month"] = data["Date/Time"].dt.month
-# Calculate mean temperature by month
-mean_temp_by_month = data.groupby("Month")["Temp_C"].mean()
 # Create bar chart of mean temperature by month
 fig, ax = plt.subplots()
 mean_temp_by_month.plot(kind="bar", ax=ax)
