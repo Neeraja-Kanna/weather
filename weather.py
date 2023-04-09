@@ -88,29 +88,29 @@ data["Month"] = data["Date/Time"].dt.month
 mean_temp_by_month = data.groupby("Month")["Temp_C"].mean()
 if st.checkbox("Average temperatures of individual months throughout the year"):
     if st.checkbox("January"):
-        st.write('the average temperature of january month:',mean_temp_by_month[1],")
+        st.write('the average temperature of january month:',mean_temp_by_month[1]")
     if st.checkbox("February"):
-        st.write('the average temperature of February month:',mean_temp_by_month[2],")
+        st.write('the average temperature of February month:',mean_temp_by_month[2]")
     if st.checkbox("March"):
-        st.write('the average temperature of March month:',mean_temp_by_month[3],")
+        st.write('the average temperature of March month:',mean_temp_by_month[3]")
     if st.checkbox("April"):
-        st.write('the average temperature of April month:',mean_temp_by_month[4],") 
+        st.write('the average temperature of April month:',mean_temp_by_month[4]") 
     if st.checkbox("May"):
-        st.write('the average temperature of may month:',mean_temp_by_month[5],")
+        st.write('the average temperature of may month:',mean_temp_by_month[5]")
     if st.checkbox("June"):
-        st.write('the average temperature of june month:',mean_temp_by_month[6],")
+        st.write('the average temperature of june month:',mean_temp_by_month[6]")
     if st.checkbox("July"):
-        st.write('the average temperature of july month:',mean_temp_by_month[7],")   
+        st.write('the average temperature of july month:',mean_temp_by_month[7]")   
     if st.checkbox("August"):
-        st.write('the average temperature of August month:',mean_temp_by_month[8],")
+        st.write('the average temperature of August month:',mean_temp_by_month[8]")
     if st.checkbox("September"):
-        st.write('the average temperature of September month:',mean_temp_by_month[9],")
+        st.write('the average temperature of September month:',mean_temp_by_month[9]")
     if st.checkbox("October"):
-        st.write('the average temperature of October month:',mean_temp_by_month[10],")
+        st.write('the average temperature of October month:',mean_temp_by_month[10]")
     if st.checkbox("November"):
-        st.write('the average temperature of November month:',mean_temp_by_month[11],")
+        st.write('the average temperature of November month:',mean_temp_by_month[11]")
     if st.checkbox("December"):
-        st.write('the average temperature of December month:',mean_temp_by_month[12],")
+        st.write('the average temperature of December month:',mean_temp_by_month[12]")
 st.write("DATA VISUALIATION ON THE DATASET")
 # Create histogram of temperatures
 if st.checkbox("Frequency distribtion of temperatures throughout the year"):
