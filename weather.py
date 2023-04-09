@@ -89,18 +89,19 @@ sns.histplot(data=data, x="Temp_C", ax=ax)
 ax.set_xlabel("Temperature (Celsius)")
 ax.set_ylabel("Count")
 # Display histogram
-if st.checkbox("Frequency distribtion of temperatures throughout the year")
+if st.checkbox("Frequency distribtion of temperatures throughout the year"):
     st.pyplot(fig)
 #Is there a relationship between temperature and visibility?
 # Data visualization question
-st.write("## Relationship between Temperature and Visibility")
+
 # Create scatterplot of temperature and visibility
 fig, ax = plt.subplots()
 sns.scatterplot(data=data, x="Temp_C", y="Visibility_km", ax=ax)
 ax.set_xlabel("Temperature (Celsius)")
 ax.set_ylabel("Visibility (km)")
 # Display scatterplot
-st.pyplot(fig)
+if st.checkbox(" Relationship between Temperature and Visibility"):
+   st.pyplot(fig)
 #What is the average temperature by month?
 # Data visualization question
 st.write("## Average Temperature by Month")
@@ -117,6 +118,7 @@ ax.set_xlabel("Month")
 ax.set_ylabel("Mean Temperature (Celsius)")
 ax.set_xticklabels(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], rotation=0)
 # Display bar chart
-st.pyplot(fig)
+if st.checkbox("show average temperature by month"):
+   st.pyplot(fig)
 #What is the average pressure by weather condition?
 
