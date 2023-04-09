@@ -58,19 +58,6 @@ if st.checkbox("Show all Null Values"):
 if st.checkbox("Rename 'Weather' column to 'Weather Condition'"):
         data.rename(columns = {'Weather' : 'Weather Condition'}, inplace=True)
         st.write(data.head())
-# Convert date column to datetime
-data["Date/Time"] = pd.to_datetime(data["Date/Time"])
-# Create new column for month
-data["Month"] = data["Date/Time"].dt.month
-# Calculate mean temperature by month
-mean_temp_by_month = data.groupby("Month")["Temp_C"].mean()
-if st.checkbox("Average temperatures of individual months throughout the year"):
-    if st.checkbox("January"):
-        st.write('the average temperature of january month:',mean_temp_by_month[1])
-        
-        
-        
-        
 if st.checkbox("Show mean 'Visibility'"):
         st.write(data.Visibility_km.mean())
 if st.checkbox("Show Standard Deviation of 'Pressure'"):
@@ -93,7 +80,15 @@ if st.checkbox("Show all instances when 'Weather is Clear' or 'Visibility is abo
         st.write(data[(data['Weather Condition'] == 'Clear') | (data['Visibility_km'] > 40)])
 if st.checkbox("Show all instances when 'Weather is Clear' and 'Relative Humidity is greater than 50' or 'Visibility is above 40'"):
         st.write(data[(data['Weather Condition'] == 'Clear') & ((data['Rel Hum_%'] > 50) | (data['Visibility_km'] > 40))])
-
+# Convert date column to datetime
+data["Date/Time"] = pd.to_datetime(data["Date/Time"])
+# Create new column for month
+data["Month"] = data["Date/Time"].dt.month
+# Calculate mean temperature by month
+mean_temp_by_month = data.groupby("Month")["Temp_C"].mean()
+if st.checkbox("Average temperatures of individual months throughout the year"):
+    if st.checkbox("January"):
+        st.write('the average temperature of january month:',mean_temp_by_month[1])
         #Data visualization question
 st.write("DATA VISUALIATION ON THE DATASET")
 # Create histogram of temperatures
