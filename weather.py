@@ -124,20 +124,22 @@ if st.checkbox("Frequency distribtion of temperatures throughout the year"):
 # Data visualization question
 
 # Create scatterplot of temperature and visibility
-fig, ax = plt.subplots()
-sns.scatterplot(data=data, x="Temp_C", y="Visibility_km", ax=ax)
-ax.set_xlabel("Temperature (Celsius)")
-ax.set_ylabel("Visibility (km)")
+if uploaded_file is not None:
+   fig, ax = plt.subplots()
+   sns.scatterplot(data=data, x="Temp_C", y="Visibility_km", ax=ax)
+   ax.set_xlabel("Temperature (Celsius)")
+   ax.set_ylabel("Visibility (km)")
 # Display scatterplot
 if st.checkbox(" Relationship between Temperature and Visibility"):
    st.pyplot(fig)
 #What is the average temperature by month?
 # Create bar chart of mean temperature by month
-fig, ax = plt.subplots()
-mean_temp_by_month.plot(kind="bar", ax=ax)
-ax.set_xlabel("Month")
-ax.set_ylabel("Mean Temperature (Celsius)")
-ax.set_xticklabels(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], rotation=0)
+if uploaded_file is not None:
+    fig, ax = plt.subplots()
+    mean_temp_by_month.plot(kind="bar", ax=ax)
+    ax.set_xlabel("Month")
+    ax.set_ylabel("Mean Temperature (Celsius)")
+    ax.set_xticklabels(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], rotation=0)
 # Display bar chart
 if st.checkbox("show average temperature by month"):
    st.pyplot(fig)
