@@ -81,11 +81,12 @@ if st.checkbox("Show all instances when 'Weather is Clear' or 'Visibility is abo
 if st.checkbox("Show all instances when 'Weather is Clear' and 'Relative Humidity is greater than 50' or 'Visibility is above 40'"):
         st.write(data[(data['Weather Condition'] == 'Clear') & ((data['Rel Hum_%'] > 50) | (data['Visibility_km'] > 40))])
 # Convert date column to datetime
-data["Date/Time"] = pd.to_datetime(data["Date/Time"])
-# Create new column for month
-data["Month"] = data["Date/Time"].dt.month
-# Calculate mean temperature by month
-mean_temp_by_month = data.groupby("Month")["Temp_C"].mean()
+if uploaded_file is not None:
+    data["Date/Time"] = pd.to_datetime(data["Date/Time"])
+    # Create new column for month
+    data["Month"] = data["Date/Time"].dt.month
+    # Calculate mean temperature by month
+    mean_temp_by_month = data.groupby("Month")["Temp_C"].mean()
 if st.checkbox("Average temperatures of individual months throughout the year"):
     if st.checkbox("January"):
         st.write('the average temperature of january month:',mean_temp_by_month[1])
