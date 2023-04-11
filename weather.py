@@ -69,6 +69,8 @@ if st.checkbox("Show all instances when 'Snow' was recorded"):
 if st.checkbox("Show all instances when 'Wind Speed is above 24' and 'Visibility is 25'"):
         st.write(data[(data['Wind Speed_km/h'] > 24) & (data['Visibility_km'] == 25)])
 if st.checkbox("Show Mean value of each column against each 'Weather Condition'"):
+        data["Date/Time"] = pd.to_datetime(data["Date/Time"])
+        data["Month"] = data["Date/Time"].dt.month
         st.write(data.groupby('Weather Condition').mean())
 if st.checkbox("Show Minimum value of each column against each 'Weather Condition'"):
         st.write(data.groupby('Weather Condition').min())
