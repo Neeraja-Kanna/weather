@@ -126,6 +126,13 @@ if st.checkbox("Frequency distribtion of temperatures throughout the year"):
 # Data visualization question
 
 # Create scatterplot of temperature and visibility
+if st.checkbox(" Relationship between Temperature and Relative Humidity"):
+  if uploaded_file is not None:
+    fig, ax = plt.subplots()
+    sns.scatterplot(data=data, x="Temp_C", y="Rel Hum_%", ax=ax)
+    ax.set_xlabel("Temperature (Celsius)")
+    ax.set_ylabel("Relative Humidity (%)")
+    st.pyplot(fig)
 if uploaded_file is not None:
    fig, ax = plt.subplots()
    sns.scatterplot(data=data, x="Temp_C", y="Visibility_km", ax=ax)
