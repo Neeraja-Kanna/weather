@@ -129,7 +129,7 @@ if st.checkbox("Frequency distribtion of temperatures throughout the year"):
 if st.checkbox(" Relationship between Temperature and Relative Humidity"):
   if uploaded_file is not None:
     fig, ax = plt.subplots()
-    sns.histplot(data=data, x="Temp_C", y="Rel Hum_%", ax=ax)
+    sns.histplot(data=data, y="Temp_C", x="Rel Hum_%", ax=ax)
     ax.set_ylabel("Temperature (Celsius)")
     ax.set_xlabel("Relative Humidity (%)")
     st.pyplot(fig)
