@@ -141,7 +141,7 @@ if st.checkbox(" Relationship between Temperature and Dew Point Temperature"):
     ax.set_xlabel("Temperature (Celsius)")
     ax.set_ylabel("Dew Point Temp_C (celsius)")
     st.pyplot(fig)
-    st.write("#The temperature and Dew point are observed to be strongly postively Correlated")
+    st.title("The temperature and Dew point are observed to be strongly postively Correlated")
 if uploaded_file is not None:
    fig, ax = plt.subplots()
    sns.scatterplot(data=data, x="Temp_C", y="Visibility_km", ax=ax)
