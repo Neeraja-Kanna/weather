@@ -125,13 +125,21 @@ if st.checkbox("Frequency distribtion of temperatures throughout the year"):
 #Is there a relationship between temperature and visibility?
 # Data visualization question
 
-# Create scatterplot of temperature and visibility
+# Create histplot of temperature and Relative humidity
 if st.checkbox(" Relationship between Temperature and Relative Humidity"):
   if uploaded_file is not None:
     fig, ax = plt.subplots()
-    sns.scatterplot(data=data, x="Temp_C", y="Rel Hum_%", ax=ax)
+    sns.histplot(data=data, x="Temp_C", y="Rel Hum_%", ax=ax)
     ax.set_xlabel("Temperature (Celsius)")
     ax.set_ylabel("Relative Humidity (%)")
+    st.pyplot(fig)
+#  Create scatterplot of temperature and Dew point temp    
+if st.checkbox(" Relationship between Temperature and Dew Point Temperature"):
+  if uploaded_file is not None:
+    fig, ax = plt.subplots()
+    sns.histplot(data=data, x="Temp_C", y="Dew Point Temp_C", ax=ax)
+    ax.set_xlabel("Temperature (Celsius)")
+    ax.set_ylabel("Dew Point Temp_C (celsius)")
     st.pyplot(fig)
 if uploaded_file is not None:
    fig, ax = plt.subplots()
