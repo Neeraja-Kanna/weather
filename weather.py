@@ -33,8 +33,8 @@ if st.checkbox("Show first 25 rows"):
         st.write(data.head(25))
 st.title("DATA CLEANING AND PREPROCESSING")
 if st.checkbox("Showing null values"):
-    st.write(isnull.sum())
-st.write("BASIC INFORMATION ON DATASET")
+    st.write(data.isnull.sum())
+st.title("BASIC INFORMATION ON DATASET")
 if st.checkbox("Show shape"):
         st.write(data.shape)
 if st.checkbox("Show index"):
@@ -51,7 +51,7 @@ if st.checkbox("Show unique values count for each column"):
         st.write(data.nunique())
 if st.checkbox("Show statistical analysis of the dataset"):
         st.write(data.describe())
-st.write("APPLYING SPECIAL OR REQURIED QUERIES BASED ON THE DATASET")
+st.title("APPLYING SPECIAL OR REQURIED QUERIES BASED ON THE DATASET")
 if st.checkbox("Show unique 'Wind Speed' values"):
         st.write(data['Wind Speed_km/h'].unique())
 if st.checkbox("Show number of times 'Weather is exactly Clear'"):
@@ -119,7 +119,7 @@ if st.checkbox("Average temperatures of individual months throughout the year"):
         st.write('the average temperature of November month:',mean_temp_by_month[11])
     if st.checkbox("December"):
         st.write('the average temperature of December month:',mean_temp_by_month[12])
-st.write("DATA VISUALIATION ON THE DATASET")
+st.title("DATA VISUALIATION ON THE DATASET")
 # Create histogram of temperatures
 if st.checkbox("Frequency distribtion of temperatures throughout the year"):
    fig, ax = plt.subplots()
