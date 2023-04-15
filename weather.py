@@ -46,6 +46,8 @@ if st.checkbox("Show count of non-null values"):
         st.write(data.count())
 if st.checkbox("Show unique values count for each column"):
         st.write(data.nunique())
+if st.checkbox("Show statistical analysis of the dataset"):
+        st.write(data.describe())
 st.write("APPLYING SPECIAL OR REQURIED QUERIES BASED ON THE DATASET")
 if st.checkbox("Show unique 'Wind Speed' values"):
         st.write(data['Wind Speed_km/h'].unique())
@@ -161,5 +163,16 @@ if uploaded_file is not None:
 # Display bar chart
 if st.checkbox("show average temperature by month"):
    st.pyplot(fig)
-#What is the average pressure by weather condition?
-
+#average pressure by weather condition
+if st.checkbox("Show Average pressure by weather condition"):
+    avg_pressure=data.groupby("Weather Condition")["Press_kPa"].mean()
+    st.write("Average pressure by weather condition")
+    st.write(avg_pressure)
+    # Create bar chart of mean pressure by weather condition
+    fig, ax = plt.subplots()
+    avg_pressure.plot(kind="bar", ax=ax)
+    ax.set_xlabel("Press_kPa")
+    ax.set_ylabel("Weather Condition")
+    #ax.set_xticklabels(["data.groupby('Weather Condition')"], rotation=0)
+    # Display bar chart
+    st.pyplot(fig)
