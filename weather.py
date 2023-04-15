@@ -31,6 +31,9 @@ if st.checkbox("Show raw data"):
         st.write(data)
 if st.checkbox("Show first 25 rows"):
         st.write(data.head(25))
+st.title("DATA CLEANING AND PREPROCESSING")
+if st.checkbox("Showing null values"):
+    st.write(isnull.sum())
 st.write("BASIC INFORMATION ON DATASET")
 if st.checkbox("Show shape"):
         st.write(data.shape)
