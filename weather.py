@@ -32,8 +32,15 @@ if st.checkbox("Show raw data"):
 if st.checkbox("Show first 25 rows"):
         st.write(data.head(25))
 st.title("DATA CLEANING AND PREPROCESSING")
-if st.checkbox("Showing null values"):
+if st.checkbox("Show null values count of all attributes"):
     st.write(data.isnull.sum())
+if st.checkbox("Showing null values count of all attributes after data preprocessing :"):
+      data=data.dropna()
+      st.write(data.isnull().sum())  
+if st.checkbox("show preprocessed data")
+    data=data.dropna() 
+    st.write(data)
+     
 st.title("BASIC INFORMATION ON DATASET")
 if st.checkbox("Show shape"):
         st.write(data.shape)
