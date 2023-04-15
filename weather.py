@@ -37,7 +37,7 @@ if st.checkbox("Show null values count of all attributes"):
 if st.checkbox("Showing null values count of all attributes after data preprocessing :"):
       data=data.dropna()
       st.write(data.isnull().sum())  
-if st.checkbox("show preprocessed data")
+if st.checkbox("show preprocessed data"):
     data=data.dropna() 
     st.write(data)
      
