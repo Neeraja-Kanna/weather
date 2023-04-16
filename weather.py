@@ -28,7 +28,7 @@ for name in names:
 
 st.sidebar.title("Under The Guidance of :")
 st.sidebar.write("Dr.Bomma.Ramakrishna")
-st.title("Weather Data Analysis")
+st.header("Weather Data Analysis")
 if st.checkbox("Show raw data"):
         st.write(data)
 if st.checkbox("Show first 25 rows"):
