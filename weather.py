@@ -46,7 +46,7 @@ if st.checkbox("show preprocessed data"):
 st.header("BASIC INFORMATION ON DATASET")
 option=st.selectbox("Select any of the below basic informatiom on dataset",["Show shape","Show index","Show columns","Show data types","Show unique values for 'Weather' column","Show count of non-null values","Show unique values count for each column"])
 if (option=="Show shape"):
-        st.write(f"Shape : {data.shape}")
+        st.write(data.shape)
 if (option=="Show index"):
         st.write(data.index)
 if (option=="Show columns"):
