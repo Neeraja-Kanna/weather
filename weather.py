@@ -16,7 +16,7 @@ if uploaded_file is not None:
     data=pd.read_csv(uploaded_file)
     st.dataframe(data)
 # Define the list of names
-names = ["K.NEERAJA", "K.AMRUTHA", "K.VAMSI","B.SAI RAM","T.MUKESH","A.HEMANTH","CH.KALYAN"]
+names = ["21A21A6103-K.NEERAJA", "21A21A6131-K.AMRUTHA VALLI", "21A21A6123-K.VAMSI","21A21A6104-B.SAI RAM","21A21A6107-CH.KALYAN RAM","21A21A6126-T.MUKESH","21A21A6102-A.HEMANTH"]
 
 # Add the names to the sidebar
 st.sidebar.title("Project Team Members:")
