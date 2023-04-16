@@ -128,7 +128,7 @@ if st.checkbox("Average temperatures of individual months throughout the year"):
         st.write('the average temperature of November month:',mean_temp_by_month[11])
     if st.checkbox("December"):
         st.write('the average temperature of December month:',mean_temp_by_month[12])
-st.title("DATA VISUALIATION ON THE DATASET")
+st.markdown("DATA VISUALIATION ON THE DATASET")
 # Create histogram of temperatures
 if st.checkbox("Frequency distribtion of temperatures throughout the year"):
    fig, ax = plt.subplots()
