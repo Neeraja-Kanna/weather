@@ -43,7 +43,7 @@ if st.checkbox("show preprocessed data"):
     data=data.dropna() 
     st.write(data)
      
-st.header("BASIC INFORMATION ON DATASET")
+st.header("Basic information on dataset")
 option=st.selectbox("Select any of the below basic informatiom on dataset",["Show shape","Show index","Show columns","Show data types","Show unique values for 'Weather' column","Show count of non-null values","Show unique values count for each column"])
 if (option=="Show shape"):
         st.write(data.shape)
@@ -129,7 +129,7 @@ if st.checkbox("Average temperatures of individual months throughout the year"):
         st.write('the average temperature of November month:',mean_temp_by_month[11])
     if st.checkbox("December"):
         st.write('the average temperature of December month:',mean_temp_by_month[12])
-st.header("DATA VISUALIATION ON THE DATASET")
+st.header("Data visualization on the dataset")
 # Create histogram of temperatures
 if st.checkbox("Frequency distribtion of temperatures throughout the year"):
    fig, ax = plt.subplots()
@@ -189,7 +189,3 @@ if st.checkbox("Show Average pressure by weather condition"):
     #ax.set_xticklabels(["data.groupby('Weather Condition')"], rotation=0)
     # Display bar chart
     st.pyplot(fig)
-
-
-value = st.slider('Select a value', 0.0, 1.0, 0.5, 0.1)
-st.write('You selected:', value)
