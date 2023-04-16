@@ -11,7 +11,7 @@ icon = Image.open('clouds1.jpg')
 st.set_page_config(page_title="weather  EDA", page_icon=icon, layout="wide")
 st.image(logo)
 st.title("Exploratory Data Analysis on Weather Dataset")
-st.image(icon,width=800)
+st.image(icon,width=900)
 # File upload
 uploaded_file = st.file_uploader("Choose a Weather Dataset csv")
 if uploaded_file is not None:
