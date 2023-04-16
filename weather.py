@@ -44,19 +44,20 @@ if st.checkbox("show preprocessed data"):
     st.write(data)
      
 st.header("BASIC INFORMATION ON DATASET")
-if st.checkbox("Show shape"):
-        st.write(data.shape)
-if st.checkbox("Show index"):
+options=st.selectbox("Select any of the below basic informatiom on dataset",["Show shape","Show index","Show columns","Show data types","Show unique values for 'Weather' column","Show count of non-null values","Show unique values count for each column"])
+if (option=="Show shape"):
+        st.write(f"Shape : {data.shape}")
+if (option=="Show index"):
         st.write(data.index)
-if st.checkbox("Show columns"):
+if (option=="Show columns"):
         st.write(data.columns)
-if st.checkbox("Show data types"):
+if (option=="Show data types"):
         st.write(data.dtypes)
-if st.checkbox("Show unique values for 'Weather' column"):
+if (option=="Show unique values for 'Weather' column"):
         st.write(data['Weather'].unique())
-if st.checkbox("Show count of non-null values"):
+if (option=="Show count of non-null values"):
         st.write(data.count())
-if st.checkbox("Show unique values count for each column"):
+if (option=="Show unique values count for each column"):
         st.write(data.nunique())
 if st.checkbox("Show statistical analysis of the dataset"):
         st.write(data.describe())
