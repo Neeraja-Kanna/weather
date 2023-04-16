@@ -33,7 +33,7 @@ if st.checkbox("Show raw data"):
         st.write(data)
 if st.checkbox("Show first 25 rows"):
         st.write(data.head(25))
-st.title("DATA CLEANING AND PREPROCESSING")
+st.title("<span style='font-size:18px'>DATA CLEANING AND PREPROCESSING</span>")
 if st.checkbox("Show null values count of all attributes"):
     st.write(data.isnull().sum())
 if st.checkbox("Showing null values count of all attributes after data preprocessing :"):
