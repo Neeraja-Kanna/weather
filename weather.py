@@ -33,7 +33,7 @@ if st.checkbox("Show raw data"):
         st.write(data)
 if st.checkbox("Show first 25 rows"):
         st.write(data.head(25))
-st.subheader("DATA CLEANING AND PREPROCESSING")
+st.header("DATA CLEANING AND PREPROCESSING")
 if st.checkbox("Show null values count of all attributes"):
     st.write(data.isnull().sum())
 if st.checkbox("Showing null values count of all attributes after data preprocessing :"):
@@ -43,7 +43,7 @@ if st.checkbox("show preprocessed data"):
     data=data.dropna() 
     st.write(data)
      
-st.title("BASIC INFORMATION ON DATASET")
+st.header("BASIC INFORMATION ON DATASET")
 if st.checkbox("Show shape"):
         st.write(data.shape)
 if st.checkbox("Show index"):
@@ -60,7 +60,7 @@ if st.checkbox("Show unique values count for each column"):
         st.write(data.nunique())
 if st.checkbox("Show statistical analysis of the dataset"):
         st.write(data.describe())
-st.title("APPLYING SPECIAL OR REQURIED QUERIES BASED ON THE DATASET")
+st.header("APPLYING SPECIAL OR REQURIED QUERIES BASED ON THE DATASET")
 if st.checkbox("Show unique 'Wind Speed' values"):
         st.write(data['Wind Speed_km/h'].unique())
 if st.checkbox("Show number of times 'Weather is exactly Clear'"):
@@ -128,7 +128,7 @@ if st.checkbox("Average temperatures of individual months throughout the year"):
         st.write('the average temperature of November month:',mean_temp_by_month[11])
     if st.checkbox("December"):
         st.write('the average temperature of December month:',mean_temp_by_month[12])
-st.markdown("DATA VISUALIATION ON THE DATASET")
+st.header("DATA VISUALIATION ON THE DATASET")
 # Create histogram of temperatures
 if st.checkbox("Frequency distribtion of temperatures throughout the year"):
    fig, ax = plt.subplots()
@@ -155,7 +155,7 @@ if st.checkbox(" Relationship between Temperature and Dew Point Temperature"):
     ax.set_xlabel("Temperature (Celsius)")
     ax.set_ylabel("Dew Point Temp_C (celsius)")
     st.pyplot(fig)
-    st.title("The temperature and Dew point are observed to be strongly postively Correlated")
+    st.header("The temperature and Dew point are observed to be strongly postively Correlated")
 if uploaded_file is not None:
    fig, ax = plt.subplots()
    sns.scatterplot(data=data, x="Temp_C", y="Visibility_km", ax=ax)
