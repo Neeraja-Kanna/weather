@@ -5,13 +5,13 @@ import seaborn as sns
 import streamlit as st
 from PIL import Image
 logo = Image.open('logo1.png')
-icon = Image.open('clouds.jpg',width=600)
+icon = Image.open('clouds.jpg')
 #pip install pandas numpy matplotlib seaborn streamlit
 #to run streamlit :   streamlit run weathertest.py 
 st.set_page_config(page_title="weather  EDA", page_icon=icon, layout="wide")
 st.image(logo)
 st.title("Exploratory Data Analysis on Weather Dataset")
-st.image(icon)
+st.image(icon,width=600)
 # File upload
 uploaded_file = st.file_uploader("Choose a Weather Dataset csv")
 if uploaded_file is not None:
