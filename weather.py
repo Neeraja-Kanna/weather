@@ -33,7 +33,7 @@ if st.checkbox("Show raw data"):
         st.write(data)
 if st.checkbox("Show first 25 rows"):
         st.write(data.head(25))
-st.header("DATA CLEANING AND PREPROCESSING")
+st.header("Data Cleaning and Preprocessing")
 if st.checkbox("Show null values count of all attributes"):
     st.write(data.isnull().sum())
 if st.checkbox("Showing null values count of all attributes after data preprocessing :"):
@@ -61,7 +61,7 @@ if (option=="Show unique values count for each column"):
         st.write(data.nunique())
 if st.checkbox("Show statistical analysis of the dataset"):
         st.write(data.describe())
-st.header("APPLYING SPECIAL OR REQURIED QUERIES BASED ON THE DATASET")
+st.header("Appling Special or Required Querirs based on the dataset")
 if st.checkbox("Show unique 'Wind Speed' values"):
         st.write(data['Wind Speed_km/h'].unique())
 if st.checkbox("Show number of times 'Weather is exactly Clear'"):
@@ -189,3 +189,7 @@ if st.checkbox("Show Average pressure by weather condition"):
     #ax.set_xticklabels(["data.groupby('Weather Condition')"], rotation=0)
     # Display bar chart
     st.pyplot(fig)
+
+
+value = st.slider('Select a value', 0.0, 1.0, 0.5, 0.1)
+st.write('You selected:', value)
