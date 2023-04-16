@@ -5,7 +5,7 @@ import seaborn as sns
 import streamlit as st
 from PIL import Image
 logo = Image.open('logo1.png')
-icon = Image.open('clouds.jpg')
+icon = Image.open('clouds.jpg',width=600)
 #pip install pandas numpy matplotlib seaborn streamlit
 #to run streamlit :   streamlit run weathertest.py 
 st.set_page_config(page_title="weather  EDA", page_icon=icon, layout="wide")
