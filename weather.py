@@ -79,8 +79,17 @@ if st.checkbox("Show Standard Deviation of 'Pressure'"):
         st.write(data.Press_kPa.std())
 if st.checkbox("Show Variance of 'Relative Humidity'"):
         st.write(data['Rel Hum_%'].var())
-if st.checkbox("Show all instances when 'Snow' was recorded"):
-        st.write(data[data['Weather Condition'].str.contains('Snow')])
+        
+        s = x1.storage.unique()
+   storage = slt.selectbox("Select Preferred Storage",s)
+   x1 = x1[x1['storage'] == storage]
+   d = x1.display_size.unique()
+x1 = data[data['name'].str.contains(brand)]
+    
+w=data[data['Weather Condition']].unique()
+weather=slt.selectbox("Show all instances when the following  'Weather Condition' was recorded:",w)
+#if st.checkbox("Show all instances when 'Snow' was recorded"):
+st.write(data[data['Weather Condition'].str.contains('weather')])
 if st.checkbox("Show all instances when 'Wind Speed is above 24' and 'Visibility is 25'"):
         st.write(data[(data['Wind Speed_km/h'] > 24) & (data['Visibility_km'] == 25)])
 if st.checkbox("Show Mean value of each column against each 'Weather Condition'"):
