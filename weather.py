@@ -79,12 +79,6 @@ if st.checkbox("Show Standard Deviation of 'Pressure'"):
         st.write(data.Press_kPa.std())
 if st.checkbox("Show Variance of 'Relative Humidity'"):
         st.write(data['Rel Hum_%'].var())
-        
-        s = x1.storage.unique()
-   storage = slt.selectbox("Select Preferred Storage",s)
-   x1 = x1[x1['storage'] == storage]
-   d = x1.display_size.unique()
-x1 = data[data['name'].str.contains(brand)]
     
 w=data[data['Weather Condition']].unique()
 weather=slt.selectbox("Show all instances when the following  'Weather Condition' was recorded:",w)
