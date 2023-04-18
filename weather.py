@@ -84,7 +84,7 @@ w=data['Weather Condition'].unique()
 wethr=st.selectbox("Show all instances when the following  'Weather Condition' was recorded:",w)
 #if st.checkbox("Show all instances when 'Snow' was recorded"):
 if wethr is not None:
-    st.write(data[data['Weather Condition'].str.contains('weather')])
+    st.write(data[data['Weather Condition']==wethr])
 if st.checkbox("Show all instances when 'Wind Speed is above 24' and 'Visibility is 25'"):
         st.write(data[(data['Wind Speed_km/h'] > 24) & (data['Visibility_km'] == 25)])
 if st.checkbox("Show Mean value of each column against each 'Weather Condition'"):
