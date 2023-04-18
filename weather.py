@@ -65,6 +65,7 @@ if st.checkbox("Show statistical analysis of the dataset"):
 st.header("Appling Special or Required Querirs based on the dataset")
 unq = st.selectbox("Show unique values of:",data.columns)
 if unq is not None:
+        st.markdown('Number of unique values in ',unq,' column are: ',data[unq].nunique())
         st.write(data[unq].unique())
 if st.checkbox("Show number of times 'Weather is exactly Clear'"):
         st.write(data[data['Weather Condition'] == 'Clear'].shape[0])
