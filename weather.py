@@ -63,8 +63,8 @@ if (option=="Show unique values count for each column"):
 if st.checkbox("Show statistical analysis of the dataset"):
         st.write(data.describe())
 st.header("Appling Special or Required Querirs based on the dataset")
-if st.checkbox("Show unique 'Wind Speed' values"):
-        st.write(data['Wind Speed_km/h'].unique())
+unq = st.selectbox("Show unique values of:",data.columns):
+        st.write(data[unq].unique())
 if st.checkbox("Show number of times 'Weather is exactly Clear'"):
         st.write(data[data['Weather Condition'] == 'Clear'].shape[0])
 if st.checkbox("Show number of times 'Wind Speed was exactly 4 km/h'"):
@@ -93,8 +93,6 @@ if st.checkbox("Show Minimum value of each column against each 'Weather Conditio
         st.write(data.groupby('Weather Condition').min())
 if st.checkbox("Show Maximum value of each column against each 'Weather Condition'"):
         st.write(data.groupby('Weather Condition').max())
-if st.checkbox("Show all records where 'Weather Condition' is Fog"):
-        st.write(data[data['Weather Condition'] == 'Fog'])
 if st.checkbox("Show all instances when 'Weather is Clear' or 'Visibility is above 40'"):
         st.write(data[(data['Weather Condition'] == 'Clear') | (data['Visibility_km'] > 40)])
 if st.checkbox("Show all instances when 'Weather is Clear' and 'Relative Humidity is greater than 50' or 'Visibility is above 40'"):
