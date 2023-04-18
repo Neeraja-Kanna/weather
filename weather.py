@@ -80,7 +80,7 @@ if st.checkbox("Show Standard Deviation of 'Pressure'"):
 if st.checkbox("Show Variance of 'Relative Humidity'"):
         st.write(data['Rel Hum_%'].var())
     
-w=data[data['Weather Condition'].unique()]
+w=data['Weather Condition'].unique()
 weather=slt.selectbox("Show all instances when the following  'Weather Condition' was recorded:",w)
 #if st.checkbox("Show all instances when 'Snow' was recorded"):
 st.write(data[data['Weather Condition'].str.contains('weather')])
