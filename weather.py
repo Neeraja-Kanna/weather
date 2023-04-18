@@ -17,6 +17,7 @@ uploaded_file = st.file_uploader("Choose a Weather Dataset csv")
 if uploaded_file is not None:
     data=pd.read_csv(uploaded_file)
     st.dataframe(data)
+    data.rename(columns = {'Weather' : 'Weather Condition'}, inplace=True)
 # Define the list of names
 names = ["21A21A6103-K.NEERAJA", "21A21A6131-K.AMRUTHA VALLI", "21A21A6123-K.VAMSI","21A21A6104-B.SAI RAM","21A21A6107-CH.KALYAN RAM","21A21A6126-T.MUKESH","21A21A6102-A.HEMANTH"]
 
@@ -53,8 +54,8 @@ if (option=="Show columns"):
         st.write(data.columns)
 if (option=="Show data types"):
         st.write(data.dtypes)
-if (option=="Show unique values for 'Weather' column"):
-        st.write(data['Weather'].unique())
+if (option=="Show unique values for 'Weather Condition' column"):
+        st.write(data['Weather Condition'].unique())
 if (option=="Show count of non-null values"):
         st.write(data.count())
 if (option=="Show unique values count for each column"):
@@ -65,14 +66,11 @@ st.header("Appling Special or Required Querirs based on the dataset")
 if st.checkbox("Show unique 'Wind Speed' values"):
         st.write(data['Wind Speed_km/h'].unique())
 if st.checkbox("Show number of times 'Weather is exactly Clear'"):
-        st.write(data[data.Weather == 'Clear'].shape[0])
+        st.write(data[data['Weather Condition'] == 'Clear'].shape[0])
 if st.checkbox("Show number of times 'Wind Speed was exactly 4 km/h'"):
         st.write(data[data['Wind Speed_km/h'] == 4].shape[0])
 if st.checkbox("Show all Null Values"):
         st.write(data.isnull().sum())
-if st.checkbox("Rename 'Weather' column to 'Weather Condition'"):
-        data.rename(columns = {'Weather' : 'Weather Condition'}, inplace=True)
-        st.write(data.head())
 if st.checkbox("Show mean 'Visibility'"):
         st.write(data.Visibility_km.mean())
 if st.checkbox("Show Standard Deviation of 'Pressure'"):
