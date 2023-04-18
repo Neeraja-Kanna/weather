@@ -6,8 +6,7 @@ import streamlit as st
 from PIL import Image
 logo = Image.open('logo1.png')
 icon = Image.open('clouds1.jpg')
-#pip install pandas numpy matplotlib seaborn streamlit
-#to run streamlit :   streamlit run weathertest.py 
+
 st.set_page_config(page_title="weather  EDA", page_icon=icon, layout="wide")
 st.image(logo)
 st.title("Exploratory Data Analysis on Weather Dataset")
@@ -73,8 +72,9 @@ if st.checkbox("Show number of times 'Wind Speed was exactly 4 km/h'"):
         st.write(data[data['Wind Speed_km/h'] == 4].shape[0])
 if st.checkbox("Show all Null Values"):
         st.write(data.isnull().sum())
-if st.checkbox("Show mean 'Visibility'"):
-        st.write(data.Visibility_km.mean())
+if st.checkbox("Mean values of attributes of the dataset"):
+        cmean=st.selectbox("Select the desired column: ",data.columns)
+        st.write(data[cmean].mean())
 if st.checkbox("Show Standard Deviation of 'Pressure'"):
         st.write(data.Press_kPa.std())
 if st.checkbox("Show Variance of 'Relative Humidity'"):
@@ -82,9 +82,10 @@ if st.checkbox("Show Variance of 'Relative Humidity'"):
     
 w=data['Weather Condition'].unique()
 wethr=st.selectbox("Show all instances when the following  'Weather Condition' was recorded:",w)
-#if st.checkbox("Show all instances when 'Snow' was recorded"):
 if wethr is not None:
+    st.write('Number of instances of ',wethr,' are: ',data[wethr].nunique())
     st.write(data[data['Weather Condition']==wethr])
+ 
 if st.checkbox("Show all instances when 'Wind Speed is above 24' and 'Visibility is 25'"):
         st.write(data[(data['Wind Speed_km/h'] > 24) & (data['Visibility_km'] == 25)])
 if st.checkbox("Show Mean value of each column against each 'Weather Condition'"):
