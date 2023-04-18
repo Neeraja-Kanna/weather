@@ -64,7 +64,7 @@ if st.checkbox("Show statistical analysis of the dataset"):
 st.header("Appling Special or Required Querirs based on the dataset")
 unq = st.selectbox("Show unique values of:",data.columns)
 if unq is not None:
-        st.write('Number of unique values in ',unq,' column are: ',data[unq].nunique())
+        st.write('Number of unique values are: ',data[unq].nunique())
         st.write(data[unq].unique())
 if st.checkbox("Show number of times 'Weather is exactly Clear'"):
         st.write(data[data['Weather Condition'] == 'Clear'].shape[0])
@@ -74,7 +74,7 @@ if st.checkbox("Show all Null Values"):
         st.write(data.isnull().sum())
 if st.checkbox("Mean values of attributes of the dataset"):
         cmean=st.selectbox("Select the desired column: ",data.columns)
-        st.write(data[cmean].mean())
+        st.write(data['cmean'].mean())
 if st.checkbox("Show Standard Deviation of 'Pressure'"):
         st.write(data.Press_kPa.std())
 if st.checkbox("Show Variance of 'Relative Humidity'"):
