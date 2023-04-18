@@ -81,7 +81,7 @@ if st.checkbox("Show Variance of 'Relative Humidity'"):
         st.write(data['Rel Hum_%'].var())
     
 w=data['Weather Condition'].unique()
-weather=slt.selectbox("Show all instances when the following  'Weather Condition' was recorded:",w)
+weather=st.selectbox("Show all instances when the following  'Weather Condition' was recorded:",w)
 #if st.checkbox("Show all instances when 'Snow' was recorded"):
 st.write(data[data['Weather Condition'].str.contains('weather')])
 if st.checkbox("Show all instances when 'Wind Speed is above 24' and 'Visibility is 25'"):
