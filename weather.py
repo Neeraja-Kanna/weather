@@ -44,7 +44,7 @@ if st.checkbox("show preprocessed data"):
     st.write(data)
      
 st.header("Basic information on dataset")
-option=st.selectbox("Select any of the below basic informatiom on dataset",["Show shape","Show index","Show columns","Show data types","Show unique values for 'Weather' column","Show count of non-null values","Show unique values count for each column"])
+option=st.selectbox("Select any of the below basic informatiom on dataset",["Show shape","Show index","Show columns","Show data types","Show count of non-null values","Show unique values count for each column"])
 if (option=="Show shape"):
         st.write(data.shape)
 if (option=="Show index"):
@@ -53,8 +53,6 @@ if (option=="Show columns"):
         st.write(data.columns)
 if (option=="Show data types"):
         st.write(data.dtypes)
-if (option=="Show unique values for 'Weather Condition' column"):
-        st.write(data['Weather Condition'].unique())
 if (option=="Show count of non-null values"):
         st.write(data.count())
 if (option=="Show unique values count for each column"):
@@ -85,7 +83,8 @@ if wethr is not None:
     st.write(data[data['Weather Condition']==wethr])
  
 if st.checkbox("Show all instances when 'Wind Speed is above 24' and 'Visibility is 25'"):
-        st.write(data[(data['Wind Speed_km/h'] > 24) & (data['Visibility_km'] == 25)])
+        wispeed = st.slider('Choose the wind speed:', 0, 30)
+        st.write(data[(data['Wind Speed_km/h'] > wispeed) & (data['Visibility_km'] == 25)])
 if st.checkbox("Show Mean value of each column against each 'Weather Condition'"):
         data["Date/Time"] = pd.to_datetime(data["Date/Time"])
         data["Month"] = data["Date/Time"].dt.month
