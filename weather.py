@@ -82,9 +82,14 @@ if wethr is not None:
     #st.write('Number of instances of ',wethr,' are: ',data[wethr].nunique())
     st.write(data[data['Weather Condition']==wethr])
  
-if st.checkbox("Show all instances when 'Wind Speed is above 24' and 'Visibility is 25'"):
-        wispeed = st.slider('Choose the wind speed:', 0, 30)
-        st.write(data[(data['Wind Speed_km/h'] > wispeed) & (data['Visibility_km'] == 25)])
+if st.checkbox("Show all instances when 'Wind Speed' and 'Visibility' are greater than selected values"):
+        wispeed = st.slider('Choose the wind speed:', 0, 100)
+        visib= st.slider('Choose the visibility:', 0, 50)
+        st.write(data[(data['Wind Speed_km/h'] > wispeed) & (data['Visibility_km'] >visib)])
+if st.checkbox("Show all instances when 'Wind Speed' and 'Visibility' are less than selected values"):
+        wispeed1 = st.slider('Choose the wind speed:', 0, 100)
+        visib1= st.slider('Choose the visibility:', 0, 50)
+        st.write(data[(data['Wind Speed_km/h'] < wispeed1) & (data['Visibility_km'] <visib1)])
 if st.checkbox("Show Mean value of each column against each 'Weather Condition'"):
         data["Date/Time"] = pd.to_datetime(data["Date/Time"])
         data["Month"] = data["Date/Time"].dt.month
