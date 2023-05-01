@@ -63,8 +63,9 @@ st.header("Appling Special or Required Querirs based on the dataset")
 unq = st.selectbox("Show unique values of:",data.columns)
 if unq is not None:
         st.write(data[unq].unique())
-if st.checkbox("Show number of times 'Weather is exactly Clear'"):
-        st.write(data[data['Weather Condition'] == 'Clear'].shape[0])
+weathr1 = st.selectbox("Show number of times 'Weather' is :"):
+if weathr1 is not None:
+        st.write(data[data['Weather Condition'] == weathr1].shape[0])
 if st.checkbox("Show number of times 'Wind Speed was exactly 4 km/h'"):
         st.write(data[data['Wind Speed_km/h'] == 4].shape[0])
         
