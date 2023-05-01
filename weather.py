@@ -81,7 +81,7 @@ if st.checkbox("Show Variance of 'Relative Humidity'"):
 
 wethr=st.selectbox("Show all instances when the following  'Weather Condition' was recorded:",w)
 if wethr is not None:
-    st.write('Number of instances of ',wethr,' are: ',data[data['Weather Condition']==wethr].count)
+    st.write('Number of instances of ',wethr,' are: ',data[data['Weather Condition']==wethr].shape[0])
     st.write(data[data['Weather Condition']==wethr])
  
 if st.checkbox("Show all instances when 'Wind Speed' and 'Visibility' are greater than selected values"):
