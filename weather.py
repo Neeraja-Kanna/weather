@@ -100,10 +100,13 @@ if st.checkbox("Show Minimum value of each column against each 'Weather Conditio
         st.write(data.groupby('Weather Condition').min())
 if st.checkbox("Show Maximum value of each column against each 'Weather Condition'"):
         st.write(data.groupby('Weather Condition').max())
-if st.checkbox("Show all instances when 'Weather is selected conditon' or 'Relative humidity is selected value'"):
+if st.checkbox("Show all instances when "):
         wcond= st.selectbox("select the weather condition:",data['Weather Condition'].unique())
-        visib2=st.slider('Choose the Relative humidity:', 0, 100)
-        st.write(data[(data['Weather Condition'] == wcond) | (data['Rel Hum_%'] == visib2)])
+        rel1=st.slider('Choose the Relative humidity:', 0, 100)
+        visib2= st.slider('choose the visibilty level:',0,50)
+        temp1=st.slider('choose the temperature:', -10, 40)
+        wind1=st.slider('choose the windspeed_kmph:',1,80)
+        st.write(data[(data['Weather Condition'] == wcond)&(data['Rel Hum_%'] == rel1)&(data['Visibility_km'] == visib2)&(data['Wind Speed_km/h'] == wind1)])
 if st.checkbox("Show all instances when 'Weather is Clear' and 'Relative Humidity is greater than 50' or 'Visibility is above 40'"):
         st.write(data[(data['Weather Condition'] == 'Clear') & ((data['Rel Hum_%'] > 50) | (data['Visibility_km'] > 40))])
 # Convert date column to datetime
