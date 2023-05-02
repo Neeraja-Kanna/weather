@@ -102,10 +102,10 @@ if st.checkbox("Show Maximum value of each column against each 'Weather Conditio
         st.write(data.groupby('Weather Condition').max())
 if st.checkbox("Show all instances when "):
         wcond= st.selectbox("select the weather condition:",data['Weather Condition'].unique())
-        rel1=st.slider('Choose the Relative humidity range:', 0, 100,(30,40))
-        visib2= st.slider('choose the visibilty level:',0,50,(20,25))
-        temp1=st.slider('choose the temperature:', -10, 40,(8,16))
-        wind1=st.slider('choose the windspeed_kmph:',1,80,(25,40))
+        rel1=st.slider('Choose the Relative humidity range:', 0, 100)
+        visib2= st.slider('choose the visibilty level:',0,50)
+        temp1=st.slider('choose the temperature:', -10, 40)
+        wind1=st.slider('choose the windspeed_kmph:',1,80)
         x1=data[data['Weather Condition'] == wcond ]
         x1=x1[x1['Rel Hum_%'] == rel1] 
         x1=x1[x1['Visibility_km'] == visib2]
