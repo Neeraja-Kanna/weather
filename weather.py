@@ -91,9 +91,9 @@ if st.checkbox("Show all instances when 'Wind Speed' and 'Visibility' are greate
         visib= st.slider('Choose the visibility:', 0, 50)
         st.write(data[(data['Wind Speed_km/h'] > wispeed) & (data['Visibility_km'] >visib)])
 if st.checkbox("Show all instances when 'Wind Speed' and 'Visibility' are less than selected values"):
-        wispeed1 = st.slider('Choose the wind speed:', 0, 100)
-        visib1= st.slider('Choose the visibility:', 0, 50)
-        st.write(data[(data['Wind Speed_km/h'] < wispeed1) & (data['Visibility_km'] <visib1)])
+        ws = st.slider('Choose the wind speed:', 0, 80)
+        vb= st.slider('Choose the visibility:', 0, 60)
+        st.write(data[(data['Wind Speed_km/h'] < ws) & (data['Visibility_km'] <vb)])
 if st.checkbox("Show Mean value of each column against each 'Weather Condition'"):
         data["Date/Time"] = pd.to_datetime(data["Date/Time"])
         data["Month"] = data["Date/Time"].dt.month
