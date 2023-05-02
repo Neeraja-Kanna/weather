@@ -67,8 +67,10 @@ w=data['Weather Condition'].unique()
 weathr1 = st.selectbox("Show number of times 'Weather' is :",w)
 if weathr1 is not None:
         st.write(data[data['Weather Condition'] == weathr1].shape[0])
-if st.checkbox("Show number of times 'Wind Speed was exactly 4 km/h'"):
-        st.write(data[data['Wind Speed_km/h'] == 4].shape[0])
+if st.checkbox("Show number of times 'Wind Speed was exactly selected km/h'"):
+        wd1=st.slider("Select the wind speed :",0,80)
+        st.write(data[data['Wind Speed_km/h'] == wd1].shape[0])
+        st.write(data[data['Wind Speed_km/h'] == wd1])
         
 if st.checkbox("Mean values of attributes of the dataset"):
         men=st.selectbox("Select the desired column: ",['Temp_C','Dew Point Temp_C','Rel Hum_%','Wind Speed_km/h','Visibility_km'])
