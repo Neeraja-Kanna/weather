@@ -181,12 +181,7 @@ if uploaded_file is not None:
 # Display scatterplot
 if st.checkbox(" Relationship between Temperature and Visibility"):
    st.pyplot(fig)
-#correlation heatmap
-if st.checkbox("show the correlation between all the features:"):
-    heat_map = data.iloc[:,1:7].corr()
-    sns.heatmap(heat_map)
-    
-               
+
 #What is the average temperature by month?
 # Create bar chart of mean temperature by month
 if uploaded_file is not None:
