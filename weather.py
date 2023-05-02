@@ -183,7 +183,7 @@ if st.checkbox(" Relationship between Temperature and Visibility"):
    st.pyplot(fig)
 #correlation heatmap
 if st.checkbox("show the correlation between all the features:"):
-    x21= data.drop(['Date/Time','Weather Condition'])
+    x21= data.drop([['Date/Time','Weather Condition']],axis=1)
     sns.heatmap(x21.corr())
     
                
