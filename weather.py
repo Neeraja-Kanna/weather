@@ -183,7 +183,7 @@ if st.checkbox(" Relationship between Temperature and Visibility"):
    st.pyplot(fig)
 #correlation heatmap
 if st.checkbox("show the correlation between all the features:"):
-    sns.heatmap(data.corr(),annot=True, cmap='bupu')
+    sns.heatmap(data.corr())
     
                
 #What is the average temperature by month?
