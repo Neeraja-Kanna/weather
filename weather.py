@@ -183,7 +183,8 @@ if st.checkbox(" Relationship between Temperature and Visibility"):
    st.pyplot(fig)
 #correlation heatmap
 if st.checkbox("show the correlation between all the features:"):
-    sns.heatmap(data.corr())
+    x21= data.drop(['Date/Time','Weather Condition'])
+    sns.heatmap(x21.corr())
     
                
 #What is the average temperature by month?
