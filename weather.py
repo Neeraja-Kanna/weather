@@ -112,8 +112,7 @@ if st.checkbox("Show all instances when "):
         x1=x1[x1['Wind Speed_km/h'] == wind1]
         st.write(x1)
         
-if st.checkbox("Show all instances when 'Weather is Clear' and 'Relative Humidity is greater than 50' or 'Visibility is above 40'"):
-        st.write(data[(data['Weather Condition'] == 'Clear') & ((data['Rel Hum_%'] > 50) | (data['Visibility_km'] > 40))])
+
 # Convert date column to datetime
 if uploaded_file is not None:
     data["Date/Time"] = pd.to_datetime(data["Date/Time"])
@@ -182,6 +181,11 @@ if uploaded_file is not None:
 # Display scatterplot
 if st.checkbox(" Relationship between Temperature and Visibility"):
    st.pyplot(fig)
+#correlation heatmap
+if st.checkbox("show the correlation between all the features:"):
+    sns.heatmap(data.corr(),annot=True, cmap='bupu')
+    
+               
 #What is the average temperature by month?
 # Create bar chart of mean temperature by month
 if uploaded_file is not None:
