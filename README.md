@@ -2,7 +2,7 @@
 
 This project is a **Weather Data Exploratory Analysis Tool** designed to perform in-depth analysis on weather datasets in `.csv` format. By leveraging data cleaning, statistical analysis, advanced analysis, and data visualization techniques, it extracts actionable insights. The application is deployed on the **Streamlit platform** for an interactive and user-friendly experience.
 
----
+## Streamlit app: https://neeraja-kanna-weather-weather-o7clva.streamlit.app/
 
 ##  Features
 - **Data Cleaning**: Handles missing values, outliers, and ensures data quality.
@@ -22,6 +22,20 @@ This project is a **Weather Data Exploratory Analysis Tool** designed to perform
   - `Streamlit` for deployment and interactive UI
 - **Deployment**: Hosted on the Streamlit platform
 
+# Deployment View :
+![image](https://github.com/user-attachments/assets/ff50cff8-f57f-4680-b24e-74f8a727384b)
+
+
+![image](https://github.com/user-attachments/assets/7e077c9d-5993-4f30-b291-534cb03ebec6)
+
+
+![image](https://github.com/user-attachments/assets/17c81f1f-4b89-4471-b63c-1e802801bc7b)
+
+
+![image](https://github.com/user-attachments/assets/d87e4c84-20d0-4c8e-8792-5de21ec32fcc)
+
+
+![image](https://github.com/user-attachments/assets/cdfe4bb1-ca99-46fb-8a02-af1dbad724b6)
 
 ---
 
@@ -39,5 +53,5 @@ Clone the repository:
 git clone https://github.com/your-username/weather-data-analysis.git
 cd weather-data-analysis
 streamlit run app.py
-
+```
 Open your browser and navigate to http://localhost:8501.
